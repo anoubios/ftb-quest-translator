@@ -1,0 +1,44 @@
+# Build outputs
+**/build/
+**/out/
+
+# Gradle
+**/.gradle/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependency JARs (users must provide their own)
+**/libs/*.jar
+
+# FTB Source references (not part of the mod)
+FTB-Quests-*/
+FTB-Library-*/
+
+# Standalone JAR files at root (dependency downloads)
+/*.jar
+
+# Generated resources
+**/src/generated/
+**/runs/
+**/bin/
+
+# Logs
+*.log
+logs/
+
+# Junction link (mod -> neoforge)
+/mod

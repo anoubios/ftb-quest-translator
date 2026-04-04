@@ -1,0 +1,13 @@
+{
+  "ftbquesttransl.translate": "Перекласти квест",
+  "ftbquesttransl.translating": "Перекладається...",
+  "ftbquesttransl.translated": "Перекладено",
+  "ftbquesttransl.click_to_restore": "Натисніть щоб повернути оригінал",
+  "ftbquesttransl.error": "Помилка перекладу",
+  "ftbquesttransl.configuration.targetLanguage": "Мова перекладу",
+  "ftbquesttransl.configuration.targetLanguage.tooltip": "Мова перекладу (ISO 639-1 код). Встановіть 'auto' для використання мови Minecraft.",
+  "ftbquesttransl.configuration.enableCaching": "Увімкнути кешування",
+  "ftbquesttransl.configuration.enableCaching.tooltip": "Кешувати переклади в пам'яті щоб не перекладати один і той самий текст повторно",
+  "ftbquesttransl.configuration.translationProvider": "Провайдер перекладу",
+  "ftbquesttransl.configuration.translationProvider.tooltip": "Який API перекладу використовувати"
+}

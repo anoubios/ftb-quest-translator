@@ -1,0 +1,13 @@
+{
+  "ftbquesttransl.translate": "Translate Quest",
+  "ftbquesttransl.translating": "Translating...",
+  "ftbquesttransl.translated": "Translated",
+  "ftbquesttransl.click_to_restore": "Click to show original",
+  "ftbquesttransl.error": "Translation failed",
+  "ftbquesttransl.configuration.targetLanguage": "Target Language",
+  "ftbquesttransl.configuration.targetLanguage.tooltip": "Target language for translation (ISO 639-1 code). Set to 'auto' to use Minecraft's language setting.",
+  "ftbquesttransl.configuration.enableCaching": "Enable Caching",
+  "ftbquesttransl.configuration.enableCaching.tooltip": "Cache translations in memory to avoid re-translating the same text",
+  "ftbquesttransl.configuration.translationProvider": "Translation Provider",
+  "ftbquesttransl.configuration.translationProvider.tooltip": "Which translation API to use"
+}
