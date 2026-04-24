@@ -1,0 +1,17 @@
+{
+    "required":  true,
+    "minVersion":  "0.8",
+    "package":  "com.fqt.fqtmod.mixin",
+    "compatibilityLevel":  "JAVA_17",
+    "client":  [
+                   "ViewQuestPanelMixin",
+                   "QuestMixin",
+                   "QuestObjectBaseMixin",
+                   "LanguageEntryMixin",
+                   "OtherButtonsPanelTopMixin"
+               ],
+    "injectors":  {
+                      "defaultRequire":  1
+                  },
+    "refmap":  "ftbquesttransl.refmap.json"
+}

@@ -1,0 +1,94 @@
+plugins {
+    id 'fabric-loom' version '1.7-SNAPSHOT'
+    id 'maven-publish'
+}
+
+version = mod_version
+group = mod_group
+
+base {
+    archivesName = "${mod_id}-fabric"
+}
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+loom {
+    accessWidenerPath = null
+    mixin {
+        defaultRefmapName.set("ftbquesttransl-fabric-refmap.json")
+    }
+}
+
+dependencies {
+    // Minecraft & mappings
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.officialMojangMappings()
+
+    // Fabric Loader
+    modImplementation "net.fabricmc:fabric-loader:${loader_version}"
+
+    // Fabric API (minimal modules needed)
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+
+    // FTB dependencies - compile only
+    modCompileOnly fileTree(dir: 'libs', include: ['*.jar'])
+
+    modLocalRuntime fileTree(dir: 'libs', include: ['*.jar'])
+
+    // TTS Dependency
+    implementation 'javazoom:jlayer:1.0.1'
+    include 'javazoom:jlayer:1.0.1'
+}
+
+processResources {
+    inputs.property "id", mod_id
+    inputs.property "version", mod_version
+    inputs.property "name", mod_name
+    inputs.property "minecraft_version", minecraft_version
+    inputs.property "loader_version", loader_version
+
+    filesMatching("fabric.mod.json") {
+        expand(
+            "id": mod_id,
+            "version": mod_version,
+            "name": mod_name,
+            "minecraft_version": minecraft_version,
+            "loader_version": loader_version
+        )
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+    options.release = 17
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+jar {
+    from("../LICENSE") {
+        rename { "${it}_${base.archivesName.get()}" }
+    }
+}
+
+publishing {
+    publications {
+        create("mavenJava", MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = "file://${project.projectDir}/repo"
+        }
+    }
+}
